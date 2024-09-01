@@ -1,12 +1,11 @@
 import { Link, NavLink } from 'react-router-dom'
-import {assets} from '../../assets/admin_assets/assets.js'
 import {assetsFront} from '../../assets/frontend_assets/assets.js'
 import { useState } from 'react'
 const Navbar = () => {
   const [visible,setVisible]=useState(false)
   return (
    <div className="flex items-center justify-between py-5 font-medium">
-    <img src={assets.logo} className='w-36' alt='' />
+    <img src={assetsFront.logo} className='w-36' alt='' />
     <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
       <NavLink to='/' className='flex flex-col items-center gap-1 '>
          <p>Home</p>
@@ -43,7 +42,7 @@ const Navbar = () => {
       </Link>
       <img onClick={()=>setVisible(true)} src={assetsFront.menu_icon} className='w-5 cursor-pointer sm:hidden' alt=''/>
     </div>
-    {/* sidebar menu fro small screen */}
+    {/* sidebar menu for small screen */}
     <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible?'w-full':'w-0'}`}>
       <div className='flex flex-col text-gray-600'>
         <div onClick={()=>setVisible(false)} className='flex items-center p-3 gap-4 cursor-pointer'>
