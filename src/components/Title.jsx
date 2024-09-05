@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types"; 
 const Title = ({text1,text2}) => {
   return (
     <div className="inline-flex gap-2 items-center mb-3">
@@ -7,5 +7,8 @@ const Title = ({text1,text2}) => {
     </div>
   )
 }
-
+Title.propTypes = {
+  text1:PropTypes.node.isRequired,
+  text2:PropTypes.node.isRequired
+};
 export default Title

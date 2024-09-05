@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')).render(
    <ShopContextProvider>
       <AppRouter/>
    </ShopContextProvider>
-  </StrictMode>,
+  </StrictMode>
 )
