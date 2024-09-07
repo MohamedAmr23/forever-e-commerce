@@ -1,10 +1,10 @@
-import  { useEffect, useRef } from 'react'
+import  { useRef } from 'react'
 
 const NewsletterBox = () => {
     const subsribe=useRef()
-    useEffect(()=>{
-        subsribe.current.focus()
-    })
+    // useEffect(()=>{
+    //     subsribe.current.focus()
+    // })
     const formHandler=(e)=>{
         e.preventDefault()
     }
