@@ -9,6 +9,8 @@ import Login from '../pages/Login.jsx'
 import PlaceOrder from '../pages/PlaceOrder.jsx'
 import Orders from '../pages/Orders.jsx'
 import MainLayout from "../components/MainLayout.jsx/MainLayout.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const router=createBrowserRouter([
     {
         path:'/',
