@@ -71,11 +71,15 @@ const ShopContextProvider=(props)=>{
         return totalAmout
     }
 
+    const submit=(e)=>{
+        e.preventDefault()
+      }
     const value={
        products,currency,delivery_fee,
        search,setSearch,showSearch,setShowSearch,
        cartItem,addToCart,getCartCount,updateQuantatity,
-       getCartMount
+       getCartMount,
+       submit
     }
     return(
         <ShopContext.Provider value={value}>
