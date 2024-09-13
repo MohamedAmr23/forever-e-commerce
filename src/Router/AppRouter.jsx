@@ -9,12 +9,14 @@ import Login from '../pages/Login.jsx'
 import PlaceOrder from '../pages/PlaceOrder.jsx'
 import Orders from '../pages/Orders.jsx'
 import SignUp from '../pages/SignUp.jsx'
+import Error from '../pages/Error.jsx'
 import MainLayout from "../components/MainLayout.jsx/MainLayout.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 const router=createBrowserRouter([
     {
         path:'/',
         element:<MainLayout/>,
+        errorElement:<Error/>,
         children:[
             {
                 index:1,
