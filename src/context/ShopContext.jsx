@@ -74,12 +74,21 @@ const ShopContextProvider=(props)=>{
     const submit=(e)=>{
         e.preventDefault()
       }
+      const [mode, setMode] = useState(
+        // eslint-disable-next-line no-extra-boolean-cast
+        Boolean(localStorage.getItem("currentMode"))
+          ? localStorage.getItem("currentMode")
+          : "light"
+      );
+      const currentMode = localStorage.getItem("currentMode");
     const value={
        products,currency,delivery_fee,
        search,setSearch,showSearch,setShowSearch,
        cartItem,addToCart,getCartCount,updateQuantatity,
        getCartMount,
-       submit
+       submit,
+       mode,setMode,currentMode
+        
     }
     return(
         <ShopContext.Provider value={value}>

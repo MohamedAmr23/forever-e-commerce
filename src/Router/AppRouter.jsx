@@ -9,9 +9,15 @@ import Login from '../pages/Login.jsx'
 import PlaceOrder from '../pages/PlaceOrder.jsx'
 import Orders from '../pages/Orders.jsx'
 import SignUp from '../pages/SignUp.jsx'
-import Error from '../pages/Error.jsx'
+import Error from '../pages/error/Error.jsx'
 import MainLayout from "../components/MainLayout.jsx/MainLayout.jsx";
 import 'react-toastify/dist/ReactToastify.css';
+import ForgotPassword from "../pages/ForgotPassword.jsx";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { getDesignTokens } from '../theme.jsx';
+import { useContext, useMemo } from "react";
+import { ShopContext } from "../context/ShopContext.jsx";
 const router=createBrowserRouter([
     {
         path:'/',
@@ -48,6 +54,9 @@ const router=createBrowserRouter([
             },{
                 path:"sign-up",
                 element:<SignUp/>
+            },{
+                path:"forget-password",
+                element:<ForgotPassword/>
             }
             
         ]
@@ -55,13 +64,16 @@ const router=createBrowserRouter([
 ])
 
 const AppRouter = () => {
+const {mode}=useContext(ShopContext)
+const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
     return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-            <RouterProvider router={router}/>
+          <RouterProvider router={router} />
         </div>
-      
-
-    )
+      </ThemeProvider>
+    );
   }
   
   export default AppRouter

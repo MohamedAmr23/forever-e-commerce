@@ -5,7 +5,8 @@ import {assetsFront} from '../assets/frontend_assets/assets.js'
 import ProductItem from '../components/ProductItem.jsx'
 import Title from "../components/Title.jsx"
 const Collection = () => {
-  const {products,search,showSearch}=useContext(ShopContext)
+  // eslint-disable-next-line no-unused-vars
+  const {products,search,showSearch,setMode,currentMode}=useContext(ShopContext)
   const [showFilter,setShowFilter]=useState(false)
   const [allProduct,setAllProduct]=useState([])
   const [category,setCategory]=useState([])
@@ -84,7 +85,7 @@ const Collection = () => {
           }  sm:block`}
         >
           <p className="mb-3 text-sm font-medium">CATEGORIES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
+          <div className={`flex flex-col gap-2 text-sm font-light ${currentMode==='light'?' text-gray-700':'text-white'}`}>
             <p className="flex gap-2">
               <input
                 type="checkbox"
@@ -121,7 +122,7 @@ const Collection = () => {
           } sm:block`}
         >
           <p className="mb-3 text-sm font-medium">TYPE</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
+          <div className={`flex flex-col gap-2 text-sm font-light ${currentMode==='light'?' text-gray-700':'text-white'}`}>
             <p className="flex gap-2">
               <input
                 type="checkbox"
@@ -158,7 +159,7 @@ const Collection = () => {
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
           <select
             onChange={(e) => setSortType(e.target.value)}
-            className="border-2 border-gray-300 text-sm px-2"
+            className={`border-2 border-gray-300 text-sm px-2 ${currentMode==='light'?'':'bg-black'}`}
           >
             <option value="relavent">Sort by:Relavent</option>
             <option value="low-high">Sort by:Low to High</option>

@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { ShopContext } from '../context/ShopContext.jsx'
 
 const ProductItem = ({id,image,name,price}) => {
-    const {currency}=useContext(ShopContext)
+    const {currency,currentMode}=useContext(ShopContext)
   return (
-    <Link className='text-gray-700 cursor-pointer' to={`/product/${id}`}>
+    <Link className={`cursor-pointer ${currentMode==='light'?'text-gray-700':"text-white"}`}  to={`/product/${id}`}>
       
         <div className='overflow-hidden'>
             <img className='hover:scale-110 transition ease-in-out' src={image[0]} alt=''/>

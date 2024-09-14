@@ -1,8 +1,11 @@
 
 
 const App = () => {
+ 
   return (
-    <div>App</div>
+ 
+      <main>This app is using the dark mode</main>
+    
   )
 }
 
