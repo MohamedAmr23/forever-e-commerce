@@ -18,6 +18,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { getDesignTokens } from '../theme.jsx';
 import { useContext, useMemo } from "react";
 import { ShopContext } from "../context/ShopContext.jsx";
+import '../language/i18n.js'; // Import the i18n configuration
+
 const router=createBrowserRouter([
     {
         path:'/',
