@@ -3,24 +3,26 @@ import NewsletterBox from '../components/NewsletterBox.jsx'
 import { assetsFront } from '../assets/frontend_assets/assets.js'
 import { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext.jsx'
+import { useTranslation } from 'react-i18next'
 const About = () => {
   const {currentMode}=useContext(ShopContext)
+  const {t,i18n}=useTranslation()
   return (
-    <div >
+    <div dir={i18n.language==='ar'?"rtl":"ltr"}>
         <div className='text-2xl text-center pt-8 border-t'>
-          <Title text1={'ABOUT'} text2={'US'}/>
+          <Title text1={t('abou')}  text2={t('us')}/>
         </div>
         <div className='my-10 flex flex-col md:flex-row gap-16'>
           <img src={assetsFront.about_img} alt='' className='w-full md:max-w-[450px]'/>
           <div className={`flex flex-col justify-center gap-6 md:w-2/4 ${currentMode==='light'?'text-gray-600 ':'text-white'}`}>
-            <p>Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.</p>
-            <p>Since our inception, we have worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.</p>
-            <p className='class="text-gray-800"'>Our Mission</p>
-            <p>Our mission at Forever is to empower customers with choice, convenience, and confidence. We are dedicated to providing a seamless shopping experience that exceeds expectations, from browsing and ordering to delivery and beyond.</p>
+            <p>{t('Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.')}</p>
+            <p>{t('Since our inception, we have worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.')}</p>
+            <p className='class="text-gray-800"'>{t('Our Mission')}</p>
+            <p>{t('Our mission at Forever is to empower customers with choice, convenience, and confidence. We are dedicated to providing a seamless shopping experience that exceeds expectations, from browsing and ordering to delivery and beyond.')}</p>
           </div>
         </div>
         <div className='mb-10'>
-          <Title text1={'WHY '} text2={'CHOOSE US'}/>
+          <Title text1={t('WHY')} text2={t('CHOOSE US')}/>
         </div>
         <div className='  flex flex-col md:flex-row text-sm mb-20'>
           

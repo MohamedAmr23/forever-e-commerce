@@ -4,6 +4,7 @@ import { ShopContext } from '../context/ShopContext.jsx'
 import {assetsFront} from '../assets/frontend_assets/assets.js'
 import ProductItem from '../components/ProductItem.jsx'
 import Title from "../components/Title.jsx"
+import { useTranslation } from 'react-i18next'
 const Collection = () => {
   // eslint-disable-next-line no-unused-vars
   const {products,search,showSearch,setMode,currentMode}=useContext(ShopContext)
@@ -12,6 +13,7 @@ const Collection = () => {
   const [category,setCategory]=useState([])
   const [subCategory,setSubCategory]=useState([])
   const [sortType,setSortType]=useState("relavent")
+  const {t,i18n}=useTranslation()
   const toggleCategory=(e)=>{
     if(category.includes(e.target.value)){
       setCategory(prev=>prev.filter((item)=>item!==e.target.value))
@@ -64,14 +66,14 @@ const Collection = () => {
   },[sortType])
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+    <div dir={i18n.language==='ar'?'rtl':'ltr'} className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* filter option */}
       <div className="min-w-60">
         <p
           onClick={() => setShowFilter(!showFilter)}
           className="my-2 text-xl flex items-center cursor-pointer gap-2"
         >
-          FILTERS
+          {t('FILTERS')}
           <img
             src={assetsFront.dropdown_icon}
             className={`sm:hidden h-3 ${showFilter ? "rotate-90" : ""}`}
@@ -80,11 +82,11 @@ const Collection = () => {
 
         {/* Category filter */}
         <div
-          className={`border border-gray-300 pl-5 py-3 my-5  ${
+          className={`border border-gray-300 pl-5 py-3 my-5 ${i18n.language==='ar'?'pr-5 ':''} ${
             showFilter ? "block" : "hidden"
           }  sm:block`}
         >
-          <p className="mb-3 text-sm font-medium">CATEGORIES</p>
+          <p className="mb-3 text-sm font-medium">{t('CATEGORIES')}</p>
           <div className={`flex flex-col gap-2 text-sm font-light ${currentMode==='light'?' text-gray-700':'text-white'}`}>
             <p className="flex gap-2">
               <input
@@ -93,7 +95,7 @@ const Collection = () => {
                 value={"Men"}
                 onChange={toggleCategory}
               />
-              Men
+              {t('Men')}
             </p>
             <p className="flex gap-2">
               <input
@@ -102,7 +104,7 @@ const Collection = () => {
                 value={"Women"}
                 onChange={toggleCategory}
               />
-              Women
+              {t('Women')}
             </p>
             <p className="flex gap-2">
               <input
@@ -111,7 +113,7 @@ const Collection = () => {
                 value={"Kids"}
                 onChange={toggleCategory}
               />
-              kids
+              {t('Kids')}
             </p>
           </div>
         </div>
@@ -119,9 +121,9 @@ const Collection = () => {
         <div
           className={`border border-gray-300 pl-5 py-3 mt-6  ${
             showFilter ? "block" : "hidden"
-          } sm:block`}
+          } sm:block ${i18n.language==='ar'?'pr-5':''}`}
         >
-          <p className="mb-3 text-sm font-medium">TYPE</p>
+          <p className="mb-3 text-sm font-medium">{t('TYPE')}</p>
           <div className={`flex flex-col gap-2 text-sm font-light ${currentMode==='light'?' text-gray-700':'text-white'}`}>
             <p className="flex gap-2">
               <input
@@ -130,7 +132,7 @@ const Collection = () => {
                 value={"Topwear"}
                 onChange={toggleSubCategory}
               />
-              Topwear
+              {t('Topwear')}
             </p>
             <p className="flex gap-2">
               <input
@@ -139,7 +141,7 @@ const Collection = () => {
                 value={"Bottomwear"}
                 onChange={toggleSubCategory}
               />
-              Bottomwear
+              {t('Bottomwear')}
             </p>
             <p className="flex gap-2">
               <input
@@ -148,7 +150,7 @@ const Collection = () => {
                 value={"Winterwear"}
                 onChange={toggleSubCategory}
               />
-              Winterwear
+              {t('Winterwear')}
             </p>
           </div>
         </div>
@@ -156,14 +158,14 @@ const Collection = () => {
       {/* Right side */}
       <div className="flex-1">
         <div className="flex justify-between text-base sm:text-2xl mb-4 ">
-          <Title text1={"ALL"} text2={"COLLECTIONS"} />
+          <Title text1={t('ALL')} text2={t('COLLECTIONS')} />
           <select
             onChange={(e) => setSortType(e.target.value)}
             className={`border-2 border-gray-300 text-sm px-2 ${currentMode==='light'?'':'bg-black'}`}
           >
-            <option value="relavent">Sort by:Relavent</option>
-            <option value="low-high">Sort by:Low to High</option>
-            <option value="high-low">Sort by:High to Low</option>
+            <option value="relavent">{t('Sort by:Relavent')}</option>
+            <option value="low-high">{t('Sort by:Low to High')}</option>
+            <option value="high-low">{t('Sort by:High to Low')}</option>
           </select>
         </div>
 
