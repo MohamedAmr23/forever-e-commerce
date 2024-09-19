@@ -93,12 +93,12 @@ const Navbar = () => {
         />
              {/* Language Toggle Buttons */}
       {i18n.language === 'en' && (
-        <button onClick={() => i18n.changeLanguage('ar')} className="bg-gray-500 py-2 px-4 border rounded">
+        <button onClick={() => i18n.changeLanguage('ar')} className=" py-2 px-4 border rounded">
           العربية
         </button>
       )}
       {i18n.language === 'ar' && (
-        <button onClick={() => i18n.changeLanguage('en')} className="bg-gray-500 py-2 px-4 border rounded">
+        <button onClick={() => i18n.changeLanguage('en')} className=" py-2 px-4 border rounded">
           English
         </button>
       )}

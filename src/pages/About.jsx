@@ -28,20 +28,20 @@ const About = () => {
           
             <div className='flex items-center justify-center border h-[250px] px-10 md:px-16 py-8 sm:py-20 flex-col'>
               <div>
-                <b className=''>Quality Assurance:</b>
-                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>We meticulously select and vet each product to ensure it meets our stringent quality standards.</p>
+                <b className=''>{t('Quality Assurance:')}</b>
+                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>{t('We meticulously select and vet each product to ensure it meets our stringent quality standards.')}</p>
               </div>    
             </div>
             <div className='flex items-center justify-center border h-[250px] px-10 md:px-16 py-8 sm:py-20 flex-col'>
               <div>
-                <b className=''>Convenience:</b>
-                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>With our user-friendly interface and hassle-free ordering process, shopping has never been easier.</p>
+                <b className=''>{t('Convenience')}</b>
+                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>{t('With our user-friendly interface and hassle-free ordering process, shopping has never been easier.')}</p>
               </div>    
             </div>
             <div className='flex items-center justify-center border h-[250px] px-10 md:px-16 py-8 sm:py-20 flex-col'>
               <div>
-                <b className='text-sm'>Exceptional Customer Service:</b>
-                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.</p>
+                <b className='text-sm'>{t('Exceptional Customer Service:')}</b>
+                <p className={`mt-5 ${currentMode==='light'?'text-gray-600 ':'text-gray-50'}`}>{t('Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.')}</p>
               </div>    
             </div>
      
